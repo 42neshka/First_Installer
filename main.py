@@ -13,7 +13,7 @@ def application():
     window.setGeometry(600, 300, 300, 300)
 
     text = QtWidgets.QLabel(window)
-    text.setText("Первичная установка!!!!")
+    text.setText("Первичная установка")
 
     window.show()
 

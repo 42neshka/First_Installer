@@ -1,9 +1,9 @@
-from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QApplication, QLabel, QMainWindow, QWidget, QMessageBox
+from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 from backQt import Backendlogic
 from frontQt import Ui_MainWindow
 
 import sys
+import subprocess
 
 
 class Window(QMainWindow):
@@ -25,10 +25,11 @@ class Window(QMainWindow):
 
         # Показ messageBox с сообщением
         msg = QMessageBox(self)
-        msg.setWindowTitle("Сообщение")
+        msg.setWindowTitle("Предупреждение")
         msg.setText(result)
         msg.setIcon(QMessageBox.Information)
         msg.exec_()
+        subprocess.run(["C:\\Users\SysAlex\PycharmProjects\First_Installer\download.exe"])
 
 
 if __name__ == "__main__":

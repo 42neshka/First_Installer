@@ -1,7 +1,9 @@
 # Этот файл создан с помощью Qt Designer, как макет для приложения
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QLabel, QWidget, QVBoxLayout
 
 
+# Основное окно UserInterface
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -9,10 +11,29 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
 
+
+
+
         self.progressBar = QtWidgets.QProgressBar(self.centralwidget)
+        self.labelDownload = QLabel("Прогресс: 0% Скорость: 0 МБ/с Оставшееся время: Неизвестно", self)
         self.progressBar.setGeometry(QtCore.QRect(40, 300, 251, 23))
-        self.progressBar.setProperty("value", 50)
+        self.progressBar.setProperty("value", 0)
         self.progressBar.setObjectName("progressBar")
+        layout = QVBoxLayout()
+        layout.addWidget(self.labelDownload)
+        layout.addWidget(self.progressBar)
+
+        container = QWidget()
+        container.setLayout(layout)
+        self.setCentralWidget(container)
+
+
+
+
+
+
+
+
 
         self.horizontalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
         self.horizontalLayoutWidget.setGeometry(QtCore.QRect(70, 120, 161, 61))
